@@ -1,0 +1,47 @@
+<div class="content">
+  <div class="table">
+    <table class="dataTable" #table>
+      <tr>
+        <td *ngFor="let hN of mainObj['arrHead']"
+            [style.display]="mainObj['objHead'][hN] ? 'none' : ''"
+            [attr.colspan]="lengthColumn[hN]"
+            [attr.rowspan]="mainObj['objArrSubHead'][hN].length > 0 ? '' : 2"
+        >{{hN}}</td>
+      </tr>
+      <tr>
+        <td *ngFor="let sHN of mainObj['arrSubHead']"
+            [style.display]="mainObj['objSubHead'][sHN] ? 'none' : ''"
+        >{{sHN}}</td>
+      </tr>
+      <tr *ngFor="let dB of dataBody">
+        <td *ngFor="let dN of mainObj['arrName']"
+            [style.display]="mainObj['objName'][dN] ? 'none' : ''"
+        >{{dB.hasOwnProperty(dN) ? dB[dN] : '-' }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="checkbox">
+    <ul>
+      <li *ngFor="let hN of mainObj['arrHead']">
+        <label>
+          <input type="checkbox"
+                 [(ngModel)]="mainObj['objHead'][hN]"
+                 (change)="onChecked(hN, false)"
+          > {{hN}}
+        </label>
+        <ul>
+          <li *ngFor="let sHN of mainObj['objArrSubHead'][hN]">
+            <label>
+              <input type="checkbox"
+                     [(ngModel)]="mainObj['objSubHead'][sHN]"
+                     (change)="onChecked(hN, sHN)"
+              >  {{ sHN}}
+            </label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

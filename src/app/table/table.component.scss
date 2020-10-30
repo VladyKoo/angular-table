@@ -1,0 +1,39 @@
+.content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table{
+  margin-top: 2%;
+
+}
+.dataTable {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6);
+  border-collapse: collapse;
+  height: 304px;
+}
+td {
+  border: 2px solid;
+  padding: 5px;
+  text-align: center;
+}
+
+.checkbox{
+  margin-top: 2%;
+  width: 150px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  border: solid 2px #f1f1f2;
+  border-radius: 5px;
+}
+ul {
+  list-style-type: none;
+}
+ul ul {
+  margin-left: 20px;
+}
