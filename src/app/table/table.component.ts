@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RequestService} from '../request.service';
+import {RequestService} from '../table/request.service';
 
 @Component({
   selector: 'app-table',
